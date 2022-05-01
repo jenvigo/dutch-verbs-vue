@@ -1,0 +1,454 @@
+{
+  "data": [
+    {
+      "english": "bake",
+      "infinitive": "bakken",
+      "past": "bakte",
+      "participle": "gebakken"
+    },
+    {
+      "english": "begin",
+      "infinitive": "beginnen",
+      "past": "begon",
+      "participle": "begonnen"
+    },
+    {
+      "english": "move",
+      "infinitive": "bewegen",
+      "past": "bewoog",
+      "participle": "bewogen"
+    },
+    {
+      "english": "offer",
+      "infinitive": "bieden",
+      "past": "bood",
+      "participle": "geboden"
+    },
+    {
+      "english": "bind",
+      "infinitive": "binden",
+      "past": "bond",
+      "participle": "gebonden"
+    },
+    {
+      "english": "appear",
+      "infinitive": "blijken",
+      "past": "bleek",
+      "participle": "gebleken"
+    },
+    {
+      "english": "break",
+      "infinitive": "breken",
+      "past": "brak",
+      "participle": "gebroken"
+    },
+    {
+      "english": "bring",
+      "infinitive": "brengen",
+      "past": "bracht",
+      "participle": "gebracht"
+    },
+    {
+      "english": "bend bow",
+      "infinitive": "buigen",
+      "past": "boog",
+      "participle": "gebogen"
+    },
+    {
+      "english": "think",
+      "infinitive": "denken",
+      "past": "dacht",
+      "participle": "gedacht"
+    },
+    {
+      "english": "do",
+      "infinitive": "doen",
+      "past": "deed",
+      "participle": "gedaan"
+    },
+    {
+      "english": "carry, wear",
+      "infinitive": "dragen",
+      "past": "droeg",
+      "participle": "gedragen"
+    },
+    {
+      "english": "drink",
+      "infinitive": "drinken",
+      "past": "dronk",
+      "participle": "gedronken"
+    },
+    {
+      "english": "force",
+      "infinitive": "dwingen",
+      "past": "dwong",
+      "participle": "gedwongen"
+    },
+    {
+      "english": "eat",
+      "infinitive": "eten",
+      "past": "at",
+      "participle": "gegeten"
+    },
+    {
+      "english": "go",
+      "infinitive": "gaan",
+      "past": "ging",
+      "participle": "gegaan"
+    },
+    {
+      "english": "be valid",
+      "infinitive": "gelden",
+      "past": "gold",
+      "participle": "gegolden"
+    },
+    {
+      "english": "enjoy",
+      "infinitive": "genieten",
+      "past": "genoot",
+      "participle": "genoten"
+    },
+    {
+      "english": "give",
+      "infinitive": "geven",
+      "past": "gaf",
+      "participle": "gegeven"
+    },
+    {
+      "english": "hang",
+      "infinitive": "hangen",
+      "past": "hing",
+      "participle": "gehangen"
+    },
+    {
+      "english": "have",
+      "infinitive": "hebben",
+      "past": "had",
+      "participle": "gehad"
+    },
+    {
+      "english": "help",
+      "infinitive": "helpen",
+      "past": "hielp",
+      "participle": "geholpen"
+    },
+    {
+      "english": "be called",
+      "infinitive": "heten",
+      "past": "heette",
+      "participle": "geheten"
+    },
+    {
+      "english": "need (denying)",
+      "infinitive": "hoeven",
+      "past": "hoefde",
+      "participle": "gehoeven"
+    },
+    {
+      "english": "hold",
+      "infinitive": "houden",
+      "past": "hield",
+      "participle": "gehouden"
+    },
+    {
+      "english": "choose",
+      "infinitive": "kiezen",
+      "past": "koos",
+      "participle": "gekozen"
+    },
+    {
+      "english": "look, watch ",
+      "infinitive": "kijken",
+      "past": "keek",
+      "participle": "gekeken"
+    },
+    {
+      "english": "sound",
+      "infinitive": "klinken",
+      "past": "klonk",
+      "participle": "geklonken"
+    },
+    {
+      "english": "come",
+      "infinitive": "komen",
+      "past": "kwam",
+      "participle": "gekomen"
+    },
+    {
+      "english": "buy",
+      "infinitive": "kopen",
+      "past": "kocht",
+      "participle": "gekocht"
+    },
+    {
+      "english": "can, be able to",
+      "infinitive": "kunnen",
+      "past": "kon",
+      "participle": "gekund"
+    },
+    {
+      "english": "laugh",
+      "infinitive": "lachen",
+      "past": "lachte",
+      "participle": "gelachen"
+    },
+    {
+      "english": "let",
+      "infinitive": "laten",
+      "past": "liet",
+      "participle": "gelaten"
+    },
+    {
+      "english": "read",
+      "infinitive": "lezen",
+      "past": "las",
+      "participle": "gelezen"
+    },
+    {
+      "english": "lay",
+      "infinitive": "liggen",
+      "past": "lag",
+      "participle": "gelegen"
+    },
+    {
+      "english": "look like",
+      "infinitive": "lijken",
+      "past": "leek",
+      "participle": "geleken"
+    },
+    {
+      "english": "walk",
+      "infinitive": "lopen",
+      "past": "liep",
+      "participle": "gelopen"
+    },
+    {
+      "english": "have to, must",
+      "infinitive": "moeten",
+      "past": "moest",
+      "participle": "gemoeten"
+    },
+    {
+      "english": "be allowed, may",
+      "infinitive": "mogen",
+      "past": "mocht",
+      "participle": "gemogen"
+    },
+    {
+      "english": "take",
+      "infinitive": "nemen",
+      "past": "nam",
+      "participle": "genomen"
+    },
+    {
+      "english": "call",
+      "infinitive": "roepen",
+      "past": "riep",
+      "participle": "geroepen"
+    },
+    {
+      "english": "give (poetic)",
+      "infinitive": "schenken",
+      "past": "schonk",
+      "participle": "geschonken"
+    },
+    {
+      "english": "create",
+      "infinitive": "scheppen",
+      "past": "schiep",
+      "participle": "geschapen"
+    },
+    {
+      "english": "shoot",
+      "infinitive": "schieten",
+      "past": "schoot",
+      "participle": "geschoten"
+    },
+    {
+      "english": "shift, push",
+      "infinitive": "schuiven",
+      "past": "schoof",
+      "participle": "geschoven"
+    },
+    {
+      "english": "beat",
+      "infinitive": "slaan",
+      "past": "sloeg",
+      "participle": "geslagen"
+    },
+    {
+      "english": "sleep",
+      "infinitive": "slapen",
+      "past": "sliep",
+      "participle": "geslapen"
+    },
+    {
+      "english": "close, shut",
+      "infinitive": "sluiten",
+      "past": "sloot",
+      "participle": "gesloten"
+    },
+    {
+      "english": "speak",
+      "infinitive": "spreken",
+      "past": "sprak",
+      "participle": "gesproken"
+    },
+    {
+      "english": "jump",
+      "infinitive": "springen",
+      "past": "sprong",
+      "participle": "gesprongen"
+    },
+    {
+      "english": "stand",
+      "infinitive": "staan",
+      "past": "stond",
+      "participle": "gestaan"
+    },
+    {
+      "english": "sting / stab",
+      "infinitive": "steken",
+      "past": "stak",
+      "participle": "gestoken"
+    },
+    {
+      "english": "die",
+      "infinitive": "sterven",
+      "past": "stierf",
+      "participle": "gestorven"
+    },
+    {
+      "english": "hit",
+      "infinitive": "treffen",
+      "past": "trof",
+      "participle": "getroffen"
+    },
+    {
+      "english": "pull",
+      "infinitive": "trekken",
+      "past": "trok",
+      "participle": "getrokken"
+    },
+    {
+      "english": "fall",
+      "infinitive": "vallen",
+      "past": "viel",
+      "participle": "gevallen"
+    },
+    {
+      "english": "catch",
+      "infinitive": "vangen",
+      "past": "ving",
+      "participle": "gevangen"
+    },
+    {
+      "english": "forget",
+      "infinitive": "vergeten",
+      "past": "vergat",
+      "participle": "vergeten"
+    },
+    {
+      "english": "loose",
+      "infinitive": "verliezen",
+      "past": "verloor",
+      "participle": "verloren"
+    },
+    {
+      "english": "find",
+      "infinitive": "vinden",
+      "past": "vond",
+      "participle": "gevonden"
+    },
+    {
+      "english": "fly",
+      "infinitive": "vliegen",
+      "past": "vloog",
+      "participle": "gevlogen"
+    },
+    {
+      "english": "prevent",
+      "infinitive": "voorkómen",
+      "past": "voorkwam",
+      "participle": "voorkomen"
+    },
+    {
+      "english": "happen",
+      "infinitive": "vóórkomen",
+      "past": "kwam voor",
+      "participle": "voorgekomen"
+    },
+    {
+      "english": "ask",
+      "infinitive": "vragen",
+      "past": "vroeg",
+      "participle": "gevraagd"
+    },
+    {
+      "english": "know something",
+      "infinitive": "weten",
+      "past": "wist",
+      "participle": "geweten"
+    },
+    {
+      "english": "point",
+      "infinitive": "wijzen",
+      "past": "wees",
+      "participle": "gewezen"
+    },
+    {
+      "english": "win",
+      "infinitive": "winnen",
+      "past": "won",
+      "participle": "gewonnen"
+    },
+    {
+      "english": "become",
+      "infinitive": "worden",
+      "past": "werd",
+      "participle": "geworden"
+    },
+    {
+      "english": "say",
+      "infinitive": "zeggen",
+      "past": "zei",
+      "participle": "gezegd"
+    },
+    {
+      "english": "see",
+      "infinitive": "zien",
+      "past": "zag",
+      "participle": "gezien"
+    },
+    {
+      "english": "be",
+      "infinitive": "zijn",
+      "past": "was",
+      "participle": "geweest"
+    },
+    {
+      "english": "sing",
+      "infinitive": "zingen",
+      "past": "zong",
+      "participle": "gezongen"
+    },
+    {
+      "english": "sink",
+      "infinitive": "zinken",
+      "past": "zonk",
+      "participle": "gezonken"
+    },
+    {
+      "english": "sit",
+      "infinitive": "zitten",
+      "past": "zat",
+      "participle": "gezeten"
+    },
+    {
+      "english": "look for",
+      "infinitive": "zoeken",
+      "past": "zocht",
+      "participle": "gezocht"
+    }
+  ]
+}
