@@ -1,4 +1,4 @@
-#Dutch verbs with VueJS
+# Dutch verbs with VueJS
 
 This is a simple VueJS test made while watching this Udemy course (https://www.udemy.com/course/vuejs-2-the-complete-guide/)
 
