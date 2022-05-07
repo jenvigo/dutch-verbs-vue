@@ -63,6 +63,7 @@ export default {
 			this[varName] = newValue;
 		},
 		focusChanged(event) {
+			/* todo: trigger a method in the HintAnswer component like the countDown() */
 			this.element = event.target;
 			// console.log(this.element.placeholder);
 			this.selectedTense = (this.element.placeholder);
