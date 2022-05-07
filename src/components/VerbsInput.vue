@@ -1,18 +1,21 @@
 <template>
 	<div id="verbsInput">
-		<p>{{ english }}</p>
+		<p style="text-align: center">{{ english }}</p>
 		<div class="row">
 			<input type="text" placeholder="infinitive" @keyup="checkIfIsRight" v-model="answer.infinitive"/>
 			<input type="text" placeholder="past" @keyup="checkIfIsRight" v-model="answer.past"/>
 			<input type="text" placeholder="participle" @keyup="checkIfIsRight" v-model="answer.participle"/>
 		</div>
 		<!--		<p>Selected tense: {{ selectedTense }}</p>-->
-		<p style="margin-left: 45px">Right answer for the selected tense: {{ this[selectedTense] }}</p>
+    <HintAnswer :selected-tense="selectedTense" :this="this"/>
 	</div>
 </template>
 
 <script>
+import HintAnswer from "./HintAnswer.vue";
+
 export default {
+	components: { HintAnswer },
 	props: ['english', 'infinitive', 'past', 'participle'],
 	// props: {
 	// 	english: {
@@ -24,6 +27,7 @@ export default {
 		return {
 			selectedTense: '',
 			answer: {
+				english: '',
 				infinitive: '',
 				past: '',
 				participle: ''
