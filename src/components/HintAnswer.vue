@@ -1,10 +1,9 @@
 <template>
-  <!-- todo: only show if it takes more than 3 seconds to reply -->
-  <p v-bind:class="{ hidden: isHidden }">Right answer for the selected tense: {{ this[selectedTense] }}</p>
-  <p>Counter: {{ this.numberCounter }}</p>
-  <button @click="countDown">CountDown</button>
-  <button @click="changeIsHidden">changeIsHidden</button>
-  <!--  todo: use a setTimeOut para hacer un countdown en la variable numberCounter-->
+  <!-- only show the Hint if it takes more than 3 seconds to reply -->
+  <div class="row">
+    <p v-bind:class="{ hidden: isHidden }">Hint: {{ this.tenses[selectedTense] }}</p>
+<!--    <p>Counter: {{ this.numberCounter }}</p>-->
+  </div>
 </template>
 <script>
 export default {
@@ -13,24 +12,49 @@ export default {
 		return {
 			numberCounter: 3,
 			isHidden: true,
+			trigger_count_down: this.start_count_down
 		};
 	},
+	watch:{
+		selectedTense(newTense, oldTense) {
+			/* the listener is called many times each time, so we need to filter out a bit */
+			if (newTense !== oldTense) {
+				console.log(`newTense: ${newTense}`);
+				console.log(`oldTense: ${oldTense}`);
+				console.log('Cambio el tense');
+				this.countDown();
+			}
+		}
+	},
 	props: {
-		selectedTense: {},
-		this: {}
+		start_count_down: {
+			type: Boolean,
+			default: false
+		},
+		selectedTense: {
+			type: String
+		},
+		answer: {
+			english: '',
+			infinitive: '',
+			past: '',
+			participle: ''
+		},
+		tenses: {}
 	},
 	methods: {
 		changeIsHidden() {
 			this.isHidden = false;
 		},
 		countDown() {
+			this.isHidden = true;
+			console.log('countDown');
+			this.numberCounter = 3;
 			const intervalID = setInterval(() => {
 				this.numberCounter--;
 				if (this.numberCounter < 1) {
 					// 		/* stop the interval if numberCounter is lower than one */
 					clearInterval(intervalID);
-					/* todo: change the visibility to show the hint */
-					/* todo: remove class hidden */
 					this.isHidden = false;
 				}
 			}, 1000);

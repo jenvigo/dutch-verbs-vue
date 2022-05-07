@@ -1,13 +1,15 @@
 <template>
 	<div id="verbsInput">
 		<p style="text-align: center">{{ english }}</p>
-		<div class="row">
-			<input type="text" placeholder="infinitive" @keyup="checkIfIsRight" v-model="answer.infinitive"/>
-			<input type="text" placeholder="past" @keyup="checkIfIsRight" v-model="answer.past"/>
-			<input type="text" placeholder="participle" @keyup="checkIfIsRight" v-model="answer.participle"/>
-		</div>
-		<!--		<p>Selected tense: {{ selectedTense }}</p>-->
-    <HintAnswer :selected-tense="selectedTense" :this="this"/>
+<!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
+    <div class="row">
+      <p style="margin-right: 10px">{{tenses.english}}</p>
+      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="infinitive" @keyup="checkIfIsRight" v-model="answer.infinitive"/>
+      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past" @keyup="checkIfIsRight" v-model="answer.past"/>
+      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle" @keyup="checkIfIsRight" v-model="answer.participle"/>
+    </div>
+    <HintAnswer :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer" :tenses="tenses"/>
+
 	</div>
 </template>
 
@@ -16,15 +18,10 @@ import HintAnswer from "./HintAnswer.vue";
 
 export default {
 	components: { HintAnswer },
-	props: ['english', 'infinitive', 'past', 'participle'],
-	// props: {
-	// 	english: {
-	// 		type: String,
-	// 		required: true,
-	// 	}
-	// },
+	props: ['english', 'tenses'],
 	data() {
 		return {
+			startCountDown: 'false',
 			selectedTense: '',
 			answer: {
 				english: '',
@@ -34,17 +31,13 @@ export default {
 			}
 		};
 	},
-	created() {
-		document.addEventListener("focusin", this.focusChanged);
-	},
-	beforeUnmount() {
-		document.removeEventListener("focusin", this.focusChanged);
-	},
 	methods: {
+		hideHint() {
+			this.startCountDown = false;
+			/* todo: emit to the parent so all the instances change this to false */
+		},
 		checkIfIsRight() {
-			console.log(this.answer[this.selectedTense].toLowerCase());
-			console.log(this[this.selectedTense].toLowerCase());
-			if (this.answer[this.selectedTense].toLowerCase() === this[this.selectedTense].toLowerCase()) {
+			if (this.answer[this.selectedTense].toLowerCase() === this.tenses[this.selectedTense].toLowerCase()) {
 				console.log('right');
 				this.markElementAsCorrect();
 			} else {
@@ -62,10 +55,8 @@ export default {
 		changeVal(varName, newValue) {
 			this[varName] = newValue;
 		},
-		focusChanged(event) {
-			/* todo: trigger a method in the HintAnswer component like the countDown() */
+		updateSelectedTense(event) {
 			this.element = event.target;
-			// console.log(this.element.placeholder);
 			this.selectedTense = (this.element.placeholder);
 		},
 	},

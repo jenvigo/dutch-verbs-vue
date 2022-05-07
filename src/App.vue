@@ -6,10 +6,12 @@
 		<verbs-input
 			v-for="verb in verbs"
 			:key="verb.english"
-			:english="verb.english"
-			:infinitive="verb.infinitive"
-			:past="verb.past"
-			:participle="verb.participle"
+      :tenses="{
+        english: verb.english,
+        infinitive: verb.infinitive,
+        past: verb.past,
+        participle: verb.participle
+      }"
 		/>
 	</section>
 </template>
