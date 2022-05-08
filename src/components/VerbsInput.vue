@@ -35,6 +35,7 @@ export default {
 		hideHint() {
 			this.startCountDown = false;
 			/* todo: emit to the parent so all the instances change this to false */
+			// this.$emit('hide-all-hints');
 		},
 		checkIfIsRight() {
 			if (this.answer[this.selectedTense].toLowerCase() === this.tenses[this.selectedTense].toLowerCase()) {
