@@ -8,7 +8,7 @@
       <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past" @keyup="checkIfIsRight" v-model="answer.past"/>
       <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle" @keyup="checkIfIsRight" v-model="answer.participle"/>
     </div>
-    <HintAnswer :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer" :tenses="tenses"/>
+    <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer" :tenses="tenses"/>
 
 	</div>
 </template>
@@ -33,9 +33,11 @@ export default {
 	},
 	methods: {
 		hideHint() {
+			console.log('focusOut');
 			this.startCountDown = false;
-			/* todo: emit to the parent so all the instances change this to false */
-			// this.$emit('hide-all-hints');
+			this.$refs.hint.hideHint();
+			/* stop the countDowns in progress */
+			this.$refs.hint.stopAllCountDowns();
 		},
 		checkIfIsRight() {
 			if (this.answer[this.selectedTense].toLowerCase() === this.tenses[this.selectedTense].toLowerCase()) {

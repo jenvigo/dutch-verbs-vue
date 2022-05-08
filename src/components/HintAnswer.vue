@@ -12,6 +12,8 @@ export default {
 		return {
 			numberCounter: 3,
 			isHidden: true,
+			countDownIds: [],
+			countDownIds_obj: {},
 			trigger_count_down: this.start_count_down
 		};
 	},
@@ -19,9 +21,9 @@ export default {
 		selectedTense(newTense, oldTense) {
 			/* the listener is called many times each time, so we need to filter out a bit */
 			if (newTense !== oldTense) {
-				console.log(`newTense: ${newTense}`);
-				console.log(`oldTense: ${oldTense}`);
-				console.log('Cambio el tense');
+				// console.log(`newTense: ${newTense}`);
+				// console.log(`oldTense: ${oldTense}`);
+				// console.log('Cambio el tense');
 				this.countDown();
 			}
 		}
@@ -40,14 +42,22 @@ export default {
 			past: '',
 			participle: ''
 		},
-		tenses: {}
+		tenses: {},
 	},
 	methods: {
-		changeIsHidden() {
+		stopAllCountDowns() {
+			this.countDownIds.forEach((value) => {
+				clearInterval(value);
+			});
+		},
+		hideHint() {
+			this.isHidden = true;
+		},
+		showHint() {
 			this.isHidden = false;
 		},
 		countDown() {
-			this.isHidden = true;
+			this.hideHint();
 			console.log('countDown');
 			this.numberCounter = 3;
 			const intervalID = setInterval(() => {
@@ -55,9 +65,10 @@ export default {
 				if (this.numberCounter < 1) {
 					// 		/* stop the interval if numberCounter is lower than one */
 					clearInterval(intervalID);
-					this.isHidden = false;
+					this.showHint();
 				}
 			}, 1000);
+			this.countDownIds.push(intervalID);
 		}
 	}
 }
