@@ -3,7 +3,7 @@
 		<p style="text-align: center">{{ english }}</p>
 <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
     <div class="row">
-      <p style="margin-right: 10px">{{tenses.english}}</p>
+      <span class="englishTense" style="margin-right: 10px">{{tenses.english}}</span>
       <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="infinitive" @keyup="checkIfIsRight" v-model="answer.infinitive"/>
       <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past" @keyup="checkIfIsRight" v-model="answer.past"/>
       <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle" @keyup="checkIfIsRight" v-model="answer.participle"/>
@@ -75,5 +75,10 @@ export default {
 	margin: 0 auto;
 	width: 50%;
 	/*background: red;*/
+}
+
+.englishTense {
+  /*min-width: 40px ;*/
+  min-width: 80px ;
 }
 </style>
