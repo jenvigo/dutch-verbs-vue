@@ -67,9 +67,20 @@ export default {
 };
 </script>
 <style>
+@media screen and (max-width: 900px) and (min-width: 600px) {
+}
+@media screen and (min-width: 800px) {
 #verbsInput  .row{
 	display: flex;
 	justify-content: center;
+}
+}
+@media screen and (max-width: 800px) {
+#verbsInput  .row{
+	display: flex;
+  flex-direction: column;
+	/*justify-content: center;*/
+}
 }
 #verbsInput {
 	margin: 0 auto;
