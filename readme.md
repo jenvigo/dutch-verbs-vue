@@ -28,4 +28,17 @@ run npm lint
 
 
 
+### The "numberCounter" property should be a constructor
+
+#### Solution:
+You need to specify the prop type:
+
+props: {
+isTabsEnabled: {
+type: Boolean,
+default: true
+}
+}
+
+
 
