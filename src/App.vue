@@ -3,31 +3,41 @@
     <header>
       <h1>Dutch verbs</h1>
     </header>
-    <!--    <p>Favs: {{ favVerbs }}</p>-->
+    <div id="viewMode">
+      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>
+    </div>
     <verbs-input
-        @toggleFav="toggleFav"
         v-for="verb in verbs"
         :key="verb.english"
+        @toggleFav="toggleFav"
         :tenses="{
         english: verb.english,
         infinitive: verb.infinitive,
         past: verb.past,
         participle: verb.participle
       }"
+        :viewMode="viewMode"
     />
   </section>
 </template>
 
 <script>
 
-import verbsJson from './data/verbs.json'
+import ViewModeEnum from "./enums/modules/ViewModeEnum";
+import verbsJson from './data/verbs.json';
 
 export default {
 	data() {
 		return {
+			viewModeBtnText: 'Show favourite verbs',
 			verbs: verbsJson.data,
 			/* use a set instead of an array so there are no duplicates */
 			favVerbs: new Set(),
+			/* viewMode is an enum with two options: regular / favVerbs */
+			/* using this logic: https://dev.to/kaiquegarcia/dealing-with-enums-in-vue-js-1e1o */
+			viewMode: ViewModeEnum.REGULAR,
+			viewModes: ViewModeEnum
+			// viewMode: 'asdf'
 		};
 	},
 	provide() {
@@ -37,6 +47,19 @@ export default {
 		}
 	},
 	methods: {
+		toggleViewMode() {
+			if (this.viewMode === ViewModeEnum.REGULAR) {
+				this.viewModeBtnText = 'Show favourite verbs'
+				this.viewMode = ViewModeEnum.FAVVERBS;
+				return true;
+			}
+			if (this.viewMode === ViewModeEnum.FAVVERBS) {
+				this.viewModeBtnText = 'Show all verbs'
+				this.viewMode = ViewModeEnum.REGULAR;
+				return true;
+			}
+			return false;
+		},
 		toggleFav(selectedVerb) {
 			if (this.favVerbs.has(selectedVerb)) {
 				this.favVerbs.delete(selectedVerb);
@@ -152,5 +175,22 @@ header {
 
 #app form div {
   margin: 1rem 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+#viewMode {
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 50%;
+}
+
+#favsViewBtn {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
 }
 </style>

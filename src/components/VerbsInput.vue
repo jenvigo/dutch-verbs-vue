@@ -1,32 +1,37 @@
 <template>
-  <div id="verbsInput">
-    <p style="text-align: center">{{ english }}</p>
-    <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
-    <div class="row">
-      <span class="englishTense" style="margin-right: 10px">{{ tenses.english }}</span>
-      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="infinitive"
-             @keyup="checkIfIsRight" v-model="answer.infinitive"/>
-      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past" @keyup="checkIfIsRight"
-             v-model="answer.past"/>
-      <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle"
-             @keyup="checkIfIsRight" v-model="answer.participle"/>
-      <TenseFav  :id="tenses.english"></TenseFav>
-    </div>
-    <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
-                :tenses="tenses"/>
+  <div v-if="filterViewMode"
+  >
+    <div id="verbsInput">
+      <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
+      <div class="row">
+        <span class="englishTense" style="margin-right: 10px">{{ tenses.english }}</span>
+        <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="infinitive"
+               @keyup="checkIfIsRight" v-model="answer.infinitive"/>
+        <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past"
+               @keyup="checkIfIsRight"
+               v-model="answer.past"/>
+        <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle"
+               @keyup="checkIfIsRight" v-model="answer.participle"/>
+        <TenseFav :id="tenses.english"></TenseFav>
+      </div>
+      <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
+                  :tenses="tenses"/>
 
+    </div>
   </div>
 </template>
 
 <script>
 import HintAnswer from "./HintAnswer.vue";
 import TenseFav from "./TenseFav.vue";
+import IndexEnums from "../enums/index";
 
 export default {
 	components: { HintAnswer, TenseFav },
-	props: ['english', 'tenses'],
+	props: ['tenses', 'viewMode'],
 	data() {
 		return {
+			inderEnums: IndexEnums,
 			startCountDown: 'false',
 			selectedTense: '',
 			answer: {
@@ -69,7 +74,24 @@ export default {
 			this.selectedTense = (this.element.placeholder);
 		},
 	},
-	computed: {}
+	inject: ['favVerbs'],
+	computed: {
+		filterViewMode() {
+			/* case 1: show if the viewMode is regular */
+			if (this.viewMode === this.inderEnums.ViewModeEnum.REGULAR) {
+				return true;
+			}
+			/* case 2: view Mode is favVerbs and the verbs is on the list */
+			const cond1 = this.viewMode === this.inderEnums.ViewModeEnum.FAVVERBS;
+			const cond2 = this.favVerbs.has(this.tenses.english);
+			console.log(cond1);
+			// console.log(cond2);
+			if (cond1 && cond2) {
+				return true;
+			}
+			return false;
+		},
+	}
 };
 </script>
 <style>
@@ -101,4 +123,5 @@ export default {
   /*min-width: 40px ;*/
   min-width: 80px;
 }
+
 </style>
