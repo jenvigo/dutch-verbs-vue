@@ -23,10 +23,12 @@
 
 <script>
 
+import verbsInput from "./components/VerbsInput.vue";
 import ViewModeEnum from "./enums/modules/ViewModeEnum";
 import verbsJson from './data/verbs.json';
 
 export default {
+	components: { verbsInput },
 	data() {
 		return {
 			viewModeBtnText: 'Show favourite verbs',

@@ -9,6 +9,6 @@ const app = createApp(App);
 
 // app.component('friend-contact', FriendContact);
 // app.component('new-friend', NewFriend);
-app.component('verbs-input', VerbsInput);
+// app.component('verbs-input', VerbsInput);
 
 app.mount('#app');
