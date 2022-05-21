@@ -8,6 +8,9 @@ This is a simple VueJS test made while watching this Udemy course (https://www.u
   - Run in your terminal `npm run serve`
   - Go to the url that prints in the terminal. For example: http://localhost:8080/
 
+### Figma for frontend
+https://www.figma.com/file/KaP3t23u3XC2GUlQxZBh5H/dutch-verbs-vercel?node-id=0%3A1
+
 ### Throubleshooting
 
 #### 1. ES-Lint
