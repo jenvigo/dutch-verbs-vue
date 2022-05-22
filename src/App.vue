@@ -1,11 +1,19 @@
 <template>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+
   <section>
     <header>
-      <h1>Dutch verbs</h1>
+<!--      <h1>dutch verbs</h1>-->
+      <img src="./img/Logo-Dutch-verbs.png" alt="">
+      <!--   todo: create a toggle similar to figma -->
+      <view-mode-selector @toggleViewMode="toggleViewMode" :viewMode="viewMode" />
     </header>
-    <div id="viewMode">
-      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>
-    </div>
+<!--    <div id="viewMode">-->
+      <!--      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>-->
+<!--    </div>-->
     <verbs-input
         v-for="verb in verbs"
         :key="verb.english"
@@ -23,12 +31,13 @@
 
 <script>
 
+import viewModeSelector from "./components/ViewModeSelector.vue";
 import verbsInput from "./components/VerbsInput.vue";
 import ViewModeEnum from "./enums/modules/ViewModeEnum";
 import verbsJson from './data/verbs.json';
 
 export default {
-	components: { verbsInput },
+	components: { verbsInput, viewModeSelector },
 	data() {
 		return {
 			viewModeBtnText: 'Show favourite verbs',
@@ -102,7 +111,8 @@ export default {
 }
 
 html {
-  font-family: 'Jost', sans-serif;
+  /*font-family: 'Jost', sans-serif;*/
+  font-family: 'Lacquer', cursive;
 }
 
 body {
@@ -112,13 +122,13 @@ body {
 
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  margin: 3rem auto;
-  border-radius: 10px;
-  padding: 1rem;
-  background-color: #58004d;
-  color: white;
+  /*margin: 1rem;*/
+  /*border-radius: 10px;*/
+  /*padding: 1rem;*/
+  background-color: #fff;
+  color: black;
   text-align: center;
-  width: 90%;
+  width: 100%;
   max-width: 40rem;
 }
 
@@ -149,23 +159,24 @@ header {
 #app button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid #ff0077;
-  background-color: #ff0077;
-  color: white;
-  padding: 0.05rem 1rem;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  /*border: 1px solid #ff0077;*/
+  /*background-color: #ff0077;*/
+  /*color: white;*/
+  /*padding: 0.05rem 1rem;*/
+  /*box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);*/
 }
 
-#app button:hover,
-#app button:active {
-  background-color: #ec3169;
-  border-color: #ec3169;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
-}
+/*#app button:hover,*/
+/*#app button:active {*/
+/*  background-color: #ec3169;*/
+/*  border-color: #ec3169;*/
+/*  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);*/
+/*}*/
 
 #app input {
   font: inherit;
   padding: 0.15rem;
+  width: 33%;
 }
 
 #app label {
