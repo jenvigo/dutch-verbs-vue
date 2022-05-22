@@ -4,7 +4,11 @@
     <div id="verbsInput">
       <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
       <div class="row">
+        <TenseFav :id="tenses.english"></TenseFav>
         <span class="englishTense" style="margin-right: 10px">{{ tenses.english }}</span>
+      </div>
+      <div class="row">
+
         <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="infinitive"
                @keyup="checkIfIsRight" v-model="answer.infinitive"/>
         <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="past"
@@ -12,7 +16,6 @@
                v-model="answer.past"/>
         <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle"
                @keyup="checkIfIsRight" v-model="answer.participle"/>
-        <TenseFav :id="tenses.english"></TenseFav>
       </div>
       <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
                   :tenses="tenses"/>
@@ -84,9 +87,10 @@ export default {
 			/* case 2: view Mode is favVerbs and the verbs is on the list */
 			const cond1 = this.viewMode === this.inderEnums.ViewModeEnum.FAVVERBS;
 			const cond2 = this.favVerbs.has(this.tenses.english);
-			console.log(cond1);
+			// console.log(cond1);
 			// console.log(cond2);
 			if (cond1 && cond2) {
+				console.log(true);
 				return true;
 			}
 			return false;
@@ -108,14 +112,15 @@ export default {
 @media screen and (max-width: 800px) {
   #verbsInput .row {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    flex-direction: row !important;
     /*justify-content: center;*/
   }
 }
 
 #verbsInput {
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
   /*background: red;*/
 }
 
