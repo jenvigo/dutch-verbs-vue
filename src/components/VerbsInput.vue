@@ -4,7 +4,8 @@
   >
     <div id="verbsInput">
       <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
-      <div class="row">
+      <div class="" style="display: grid; grid-template-columns: 20px 1fr 34%;
+    grid-gap: 10px;">
         <TenseFav :id="tenses.english"></TenseFav>
         <span class="englishTense" style="margin-right: 10px">{{ tenses.english }}</span>
         <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
