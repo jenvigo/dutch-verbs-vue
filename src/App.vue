@@ -5,16 +5,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
 
   <section>
-    <header style="margin-bottom: 10px">
-<!--      <h1>dutch verbs</h1>-->
+    <header style="margin-bottom: 10px; position: fixed">
+      <!--      <h1>dutch verbs</h1>-->
       <img src="./img/Logo-Dutch-verbs.png" alt="">
       <!--   todo: create a toggle similar to figma -->
-      <view-mode-selector @toggleViewMode="toggleViewMode" :viewMode="viewMode" />
+      <view-mode-selector @toggleViewMode="toggleViewMode" :viewMode="viewMode"/>
     </header>
-<!--    <div id="viewMode">-->
-      <!--      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>-->
-<!--    </div>-->
-    <div style="max-width: 650px; margin: 0 auto;">
+    <!--    <div id="viewMode">-->
+    <!--      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>-->
+    <!--    </div>-->
+    <div id="verbs-input-wrapper">
       <verbs-input
           v-for="verb in verbs"
           :key="verb.english"
@@ -207,5 +207,11 @@ section {
   width: 300px;
   display: block;
   margin: 0 auto;
+}
+
+#verbs-input-wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 125px;
 }
 </style>
