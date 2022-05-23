@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
 
   <section>
-    <header>
+    <header style="margin-bottom: 10px">
 <!--      <h1>dutch verbs</h1>-->
       <img src="./img/Logo-Dutch-verbs.png" alt="">
       <!--   todo: create a toggle similar to figma -->
@@ -14,18 +14,20 @@
 <!--    <div id="viewMode">-->
       <!--      <button id="favsViewBtn" @click="toggleViewMode">{{ viewModeBtnText }}</button>-->
 <!--    </div>-->
-    <verbs-input
-        v-for="verb in verbs"
-        :key="verb.english"
-        @toggleFav="toggleFav"
-        :tenses="{
+    <div style="max-width: 650px; margin: 0 auto;">
+      <verbs-input
+          v-for="verb in verbs"
+          :key="verb.english"
+          @toggleFav="toggleFav"
+          :tenses="{
         english: verb.english,
         infinitive: verb.infinitive,
         past: verb.past,
         participle: verb.participle
       }"
-        :viewMode="viewMode"
-    />
+          :viewMode="viewMode"
+      />
+    </div>
   </section>
 </template>
 
@@ -129,7 +131,7 @@ header {
   color: black;
   text-align: center;
   width: 100%;
-  max-width: 40rem;
+  /*max-width: 40rem;*/
 }
 
 #app ul {

@@ -1,11 +1,14 @@
 <template>
   <div v-if="filterViewMode"
+
   >
     <div id="verbsInput">
       <!--    <div class="row">Selected tense: {{ selectedTense }}</div>-->
       <div class="row">
         <TenseFav :id="tenses.english"></TenseFav>
         <span class="englishTense" style="margin-right: 10px">{{ tenses.english }}</span>
+        <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
+                    :tenses="tenses"/>
       </div>
       <div class="row">
 
@@ -17,8 +20,6 @@
         <input type="text" @focusin="updateSelectedTense" @focusout="hideHint" placeholder="participle"
                @keyup="checkIfIsRight" v-model="answer.participle"/>
       </div>
-      <HintAnswer ref="hint" :selected-tense="selectedTense" :start-count_down="startCountDown" :answer="answer"
-                  :tenses="tenses"/>
 
     </div>
   </div>
