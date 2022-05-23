@@ -1,7 +1,7 @@
 <template>
   <!-- only show the Hint if it takes more than 3 seconds to reply -->
-  <div class="row">
-    <p v-bind:class="{ hidden: isHidden }">Hint: {{ this.tenses[selectedTense] }}</p>
+  <div class="" style="padding-left: 5px">
+    <span v-bind:class="{ hidden: isHidden }">Hint: {{ this.tenses[selectedTense] }}</span>
 <!--    <p>Counter: {{ this.numberCounter }}</p>-->
   </div>
 </template>
