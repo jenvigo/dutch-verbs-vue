@@ -1,7 +1,11 @@
-<template >
-  <!-- todo: change to unfav is the verb is on the list of favs -->
+<template>
   <div id="tenseFav">
-    <button @click="emisor"><img style="width: 19px" :src="textForFavButton" alt="favIcon"></button>
+    <button @click="emisor">
+      <img
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+        :src="imgForFavButton">
+    </button>
   </div>
 </template>
 
@@ -11,14 +15,25 @@ import starOff from '../img/star_off.png';
 
 export default {
 	computed: {
-		textForFavButton() {
+		imgForFavButton() {
+			if (this.hover === true) {
+				return starOn;
+			}
 			const isFav = this.favs.has(this.id);
-			// return isFav ? 'UnFav' : 'Fav';
 			return isFav ? starOn : starOff;
 		},
 	},
 	inject: ['favVerbs'],
 	methods: {
+		changeImage() {
+			if (this.hover === true) {
+				this.$refs.favIconRef.src = starOn;
+				console.log('on');
+			}
+			if (this.hover === false) {
+				this.$refs.favIconRef.src = starOff;
+			}
+		},
 		emisor() {
 			// emits an event to the parent component where the favs are stored
 			this.$parent.$emit('toggleFav', this.id);
@@ -28,6 +43,7 @@ export default {
 	props: ['id'],
 	data() {
 		return {
+			hover: false,
 			favs: this.favVerbs
 		}
 	},
@@ -35,11 +51,15 @@ export default {
 </script>
 
 <style scoped>
-#tenseFav{
+#tenseFav {
   margin-right: 10px !important;
 }
+
 #tenseFav button {
   border: none;
   background: none;
+}
+#tenseFav button img {
+  width: 19px;
 }
 </style>
